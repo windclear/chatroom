@@ -56,6 +56,7 @@ def chat_add():
     m.save()
     r = {
         'name': m.user.username,
+        'avatar': m.user.avatar,
         'content': m.content,
         'channel': m.channel,
         'created_time': m.created_time.strftime("%Y-%m-%d %H:%M:%S"),

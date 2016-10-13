@@ -21,34 +21,15 @@ var scrollToBottom = function(selector){
 
 var chatItemTemplate = function(chat) {
     var name = chat.name
+    var avatar = chat.avatar
     var content = chat.content
     var time = chat.created_time
     var t = `
-    <div class="chat-item burstStart read burstFinal">
-        <div class="chat-item__container">
-            <div class="chat-item__aside">
-                <div class="chat-item__avatar">
-                    <span class="widget">
-                        <div class="trpDisplayPicture avatar-s">
-                            <img src="https://avatars0.githubusercontent.com/u/7235381?v=3&amps=30"  height="30" width="30" class="avatar__image" alt="">
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="chat-item__actions js-chat-item-actions">
-                <i class="chat-item__icon icon-check chat-item__icon--read chat-item__icon--read-by-some js-chat-item-readby"></i>
-                <i class="chat-item__icon icon-ellipsis"></i>
-            </div>
-            <div class="chat-item__content">
-                <div class="chat-item__details">
-                    <div class="chat-item__from js-chat-item-from">${name}</div>
-                    <a class="chat-item__time js-chat-time" href="#">
-                        <time data-time="${time}"></time>
-                    </a>
-                </div>
-                <div class="chat-item__text js-chat-item-text">${content}</div>
-            </div>
-        </div>
+    <div class="">
+        <img src="${avatar}"/>
+        <span>${name}</span>
+        <span>${content}</span>
+        <span>${time}</span>
     </div>
     `
     return t
@@ -130,7 +111,7 @@ var bindActions = function(){
       $('.rc-channel').removeClass('active')
       $(this).addClass('active')
       // reload 信息
-      $('#id-div-chats').empty()
+    //   $('#id-div-chats').empty()
       var chats = chatStore[currentChannel]
       insertChats(chats)
   })
