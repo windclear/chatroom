@@ -37,8 +37,9 @@ def subscribe():
 
 @main.route('/')
 def index_view():
+    cu = current_user()
     ms = Message.query.all()
-    return render_template('index.html', messages=ms)
+    return render_template('index.html', messages=ms, cu=cu)
 
 
 def current_time():
