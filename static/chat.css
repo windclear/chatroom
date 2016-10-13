@@ -24,6 +24,7 @@
     /*background: red;*/
     height: 80%;
     overflow-y: scroll;
+    display: none;
 }
 
 .rc-input {

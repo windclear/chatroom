@@ -59,7 +59,7 @@ def chat_add():
         'avatar': m.user.avatar,
         'content': m.content,
         'channel': m.channel,
-        'created_time': m.created_time.strftime("%Y-%m-%d %H:%M:%S"),
+        'created_time': m.created_time.strftime("%Y-%m-%d %H:%M"),
     }
     message = json.dumps(r, ensure_ascii=False)
     print('debug', message)
