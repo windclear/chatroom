@@ -24,7 +24,6 @@
     /*background: red;*/
     height: 80%;
     overflow-y: scroll;
-    display: none;
 }
 
 .rc-input {
@@ -32,4 +31,7 @@
     position: fixed;
     bottom: 0px;
     left: 100px;
+}
+#id-div-channels {
+    display: none;
 }
