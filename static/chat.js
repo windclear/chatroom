@@ -87,10 +87,10 @@ var subscribe = function() {
 }
 
 var sendMessage = function(){
-  var name = $('#id-input-name').val()
+  // var name = $('#id-input-name').val()
   var content = $('#id-input-content').val()
   var message = {
-    name: name,
+    // name: name,
     content: content,
     channel: currentChannel,
   }

@@ -1,7 +1,7 @@
 from models.user import User
 from models.message import Message
 from routes import *
-
+from routes.user import current_user
 import json
 import redis
 
@@ -51,14 +51,14 @@ def chat_add():
     if cu is None:
         abort(401)
     msg = request.get_json()
-    msg.set('user_id', cu.id)
+    msg['user_id'] = cu.id
     m = Message(msg)
     m.save()
     r = {
         'name': m.user.username,
         'content': m.content,
         'channel': m.channel,
-        'created_time': m.created_time,
+        'created_time': m.created_time.strftime("%Y-%m-%d %H:%M:%S"),
     }
     message = json.dumps(r, ensure_ascii=False)
     print('debug', message)
